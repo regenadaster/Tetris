@@ -1,0 +1,124 @@
+# depslib dependency file v1.0
+1400747211 source:e:\oj\snack\table.cpp
+	<iostream>
+	<stdio.h>
+	"table.h"
+	<memory.h>
+
+1400743543 e:\oj\snack\table.h
+	"drawer.h"
+	"block.h"
+	"point.h"
+
+1400647893 source:e:\oj\snack\point.cpp
+	<iostream>
+	"point.h"
+
+1400647897 e:\oj\snack\point.h
+
+1400636695 source:e:\oj\snack\snack.cpp
+	<iostream>
+	<stdio.h>
+	<windows.h>
+	<winuser.h>
+	<conio.h>
+	"table.h"
+	"point.h"
+	"drawer.h"
+	"block.h"
+
+1400743836 e:\oj\snack\drawer.h
+	"windows.h"
+	"block.h"
+	"point.h"
+
+1400747080 source:e:\oj\snack\drawer.cpp
+	<iostream>
+	<stdio.h>
+	"windows.h"
+	"drawer.h"
+
+1400742815 source:e:\oj\snack\block.cpp
+	<stdio.h>
+	"block.h"
+	"stdlib.h"
+	"time.h"
+
+1400742405 e:\oj\snack\block.h
+	"point.h"
+
+1400745424 source:e:\oj\snack\russiablock.cpp
+	<iostream>
+	<stdio.h>
+	<windows.h>
+	<winuser.h>
+	<conio.h>
+	"table.h"
+	"point.h"
+	"drawer.h"
+	"block.h"
+	"eraser.h"
+
+1400671400 source:e:\oj\snack\eraser.cpp
+	<stdio.h>
+	"eraser.h"
+
+1400654453 e:\oj\snack\eraser.h
+	"point.h"
+	"drawer.h"
+	"block.h"
+
+1400742815 source:e:\oj\tetric\block.cpp
+	<stdio.h>
+	"block.h"
+	"stdlib.h"
+	"time.h"
+
+1400742405 e:\oj\tetric\block.h
+	"point.h"
+
+1400647897 e:\oj\tetric\point.h
+
+1400747590 source:e:\oj\tetric\drawer.cpp
+	<iostream>
+	<stdio.h>
+	"windows.h"
+	"drawer.h"
+
+1400743836 e:\oj\tetric\drawer.h
+	"windows.h"
+	"block.h"
+	"point.h"
+
+1400647893 source:e:\oj\tetric\point.cpp
+	<iostream>
+	"point.h"
+
+1400745424 source:e:\oj\tetric\russiablock.cpp
+	<iostream>
+	<stdio.h>
+	<windows.h>
+	<winuser.h>
+	<conio.h>
+	"table.h"
+	"point.h"
+	"drawer.h"
+	"block.h"
+	"eraser.h"
+
+1400743543 e:\oj\tetric\table.h
+	"drawer.h"
+	"block.h"
+	"point.h"
+
+1400654453 e:\oj\tetric\eraser.h
+	"point.h"
+	"drawer.h"
+	"block.h"
+
+1400747211 source:e:\oj\tetric\table.cpp
+	<iostream>
+	<stdio.h>
+	"table.h"
+	<memory.h>
+
