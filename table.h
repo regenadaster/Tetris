@@ -30,6 +30,7 @@ class table{
    void setIspaint(int x);
    int getIspaint();
    int isRotote();
+   void colorChange();
    void table_era(block&);
   private:
     int lastTime;
@@ -47,6 +48,7 @@ class table{
     int bmap[150][25];
     int t_height;
     int t_width;
+    int colorRand;
 };
 
 

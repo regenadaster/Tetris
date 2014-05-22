@@ -2,8 +2,10 @@
 #include <stdio.h>
 #include "table.h"
 #include <memory.h>
+#include <time.h>
 table::table(){
   int i,j;
+  colorChange();
   b_h=0;
   b_w=0;
   score=0;
@@ -28,6 +30,10 @@ table::table(){
     bmap[2][i]=1;
     bmap[26][i]=1;
   }
+}
+void table::colorChange(){
+  srand((int)time(0));
+  colorRand=rand()%6;
 }
 void table::drawAuthor(){
   t_drawer.drawTXT("Next:",33,9);
@@ -151,7 +157,7 @@ void table::run(){
     nextb.setType(current.getNextType());
     nextb.setState(current.getNextState());
     nextb.setBpos(32,10);
-    t_drawer.drawBlock(nextb);
+    t_drawer.drawBlock(nextb,colorRand);
   }
   lastTime=GetTickCount();
   while(GetTickCount()-lastTime<=500){
@@ -162,7 +168,7 @@ void table::run(){
         setIspaint(0);
       }
       current.rotote();
-      t_drawer.drawBlock(current);
+      t_drawer.drawBlock(current,colorRand);
       setIspaint(1);
       Sleep(100);
       }
@@ -176,7 +182,7 @@ void table::run(){
         w=current.getPos().getX();
         setBw(w-2);
         current.setBpos(getBw(),getBh());
-        t_drawer.drawBlock(current);
+        t_drawer.drawBlock(current,colorRand);
         setIspaint(1);
         Sleep(90);
       }
@@ -190,7 +196,7 @@ void table::run(){
         w=current.getPos().getX();
         setBw(w+2);
         current.setBpos(getBw(),getBh());
-        t_drawer.drawBlock(current);
+        t_drawer.drawBlock(current,colorRand);
         setIspaint(1);
         Sleep(90);
      }
@@ -203,7 +209,7 @@ void table::run(){
           setIspaint(0);
         }
         current.setBpos(getBw(),getBh());
-        t_drawer.drawBlock(current);
+        t_drawer.drawBlock(current,colorRand);
         setIspaint(1);
         Sleep(20);
       }
@@ -222,10 +228,11 @@ void table::run(){
       setIspaint(0);
     }
     current.setBpos(getBw(),getBh());
-    t_drawer.drawBlock(current);
+    t_drawer.drawBlock(current,colorRand);
     setIspaint(1);
   }
   else{
+    colorChange();
     addToBmap();
     deleteGood();
     current.reflesh();

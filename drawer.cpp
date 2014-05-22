@@ -2,9 +2,16 @@
 #include <stdio.h>
 #include "windows.h"
 #include "drawer.h"
+#include "time.h"
 
 drawer::drawer(){
   dHandle=GetStdHandle(STD_OUTPUT_HANDLE);
+  colors[0]=FOREGROUND_GREEN;
+  colors[1]=FOREGROUND_BLUE;
+  colors[2]=FOREGROUND_RED;
+  colors[3]=FOREGROUND_GREEN|FOREGROUND_BLUE;
+  colors[4]=FOREGROUND_BLUE|FOREGROUND_RED;
+  colors[5]=FOREGROUND_GREEN|FOREGROUND_RED;
 }
 void drawer::drawLine(int sx,int sy,int ex,int ey){
   int i;
@@ -44,8 +51,9 @@ void drawer::setCur(int xx,int yy){
 void drawer::setCur(point &po){
   setCur(po.getX(),po.getY());
 }
-void drawer::drawBlock(block& bl){
+void drawer::drawBlock(block& bl,int cRand){
   int bx,by,_i,_j;
+  SetConsoleTextAttribute(dHandle,colors[cRand]|FOREGROUND_INTENSITY);
   bx=bl.getPos().getX();
   by=bl.getPos().getY();
   for(_i=0;_i<4;_i++){

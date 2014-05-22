@@ -18,7 +18,7 @@ int main()
   COORD pos={15,5};
   hOut=GetStdHandle(STD_OUTPUT_HANDLE);
   SetConsoleCursorPosition(hOut,pos);
-  //SetConsoleTextAttribute(hOut,0x01|0x05);
+  SetConsoleTextAttribute(hOut, FOREGROUND_BLUE|FOREGROUND_INTENSITY|FOREGROUND_RED);
   //printf("HelloWorld!\n");
   //Sleep(3000);
   //RECT r={0,0,10,10};

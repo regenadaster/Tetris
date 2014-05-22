@@ -11,7 +11,7 @@ class drawer{
     void drawDot(int ,int);
     void drawLine(int ,int ,int ,int );
     void drawRect(int ,int ,int ,int );
-    void drawBlock(block&);
+    void drawBlock(block&,int);
     void drawTXT(char *str,int x,int y);
     void drawINT(int val,int x,int y);
     void e_act(block&,int(*)[25]);
@@ -20,6 +20,7 @@ class drawer{
     void era_line(int);
   private:
     HANDLE dHandle;
+    DWORD colors[6];
 };
 
 
