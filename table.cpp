@@ -130,7 +130,7 @@ void table::GameOver(){
   int _i,_j;
   gameOver=1;
   for(_i=1;_i<20;_i++){
-    for(_j=4;_j<27;_j+=2){
+    for(_j=2;_j<25;_j+=2){
       Sleep(5);
       t_drawer.drawDot(_j,_i);
     }

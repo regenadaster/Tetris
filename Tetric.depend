@@ -122,3 +122,57 @@
 	"table.h"
 	<memory.h>
 
+1400747590 source:c:\users\lgt\documents\github\tetris\drawer.cpp
+	<iostream>
+	<stdio.h>
+	"windows.h"
+	"drawer.h"
+
+1400743836 c:\users\lgt\documents\github\tetris\drawer.h
+	"windows.h"
+	"block.h"
+	"point.h"
+
+1400753441 c:\users\lgt\documents\github\tetris\block.h
+	"point.h"
+
+1400647897 c:\users\lgt\documents\github\tetris\point.h
+
+1400647893 source:c:\users\lgt\documents\github\tetris\point.cpp
+	<iostream>
+	"point.h"
+
+1400745424 source:c:\users\lgt\documents\github\tetris\russiablock.cpp
+	<iostream>
+	<stdio.h>
+	<windows.h>
+	<winuser.h>
+	<conio.h>
+	"table.h"
+	"point.h"
+	"drawer.h"
+	"block.h"
+	"eraser.h"
+
+1400743543 c:\users\lgt\documents\github\tetris\table.h
+	"drawer.h"
+	"block.h"
+	"point.h"
+
+1400654453 c:\users\lgt\documents\github\tetris\eraser.h
+	"point.h"
+	"drawer.h"
+	"block.h"
+
+1400747211 source:c:\users\lgt\documents\github\tetris\table.cpp
+	<iostream>
+	<stdio.h>
+	"table.h"
+	<memory.h>
+
+1400753582 source:c:\users\lgt\documents\github\tetris\block.cpp
+	<stdio.h>
+	"block.h"
+	"stdlib.h"
+	"time.h"
+

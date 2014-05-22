@@ -17,6 +17,12 @@
    type five:
             ***
               *
+   type six:
+            ***
+            *
+   type seven:
+             **
+            **
 **/
 
 class block{

@@ -70,7 +70,7 @@ void block::setBpos(int xx,int yy){
   b_pos.setY(yy);
 }
 void block::setType(int t){
-  if(t>0&&t<6){
+  if(t>0&&t<8){
     b_type=t;
     int t_one[4][4]={
       {0,1,0,0},
@@ -102,6 +102,18 @@ void block::setType(int t){
       {0,1,1,0},
       {0,0,0,0}
     };
+    int t_six[4][4]={
+      {0,0,1,0},
+      {0,0,1,0},
+      {0,1,1,0},
+      {0,0,0,0}
+    };
+    int t_seven[4][4]={
+      {0,0,1,0},
+      {0,1,1,0},
+      {0,1,0,0},
+      {0,0,0,0}
+    };
     int (*ptr)[4];
     int i,j;
     if(t==1){
@@ -118,6 +130,12 @@ void block::setType(int t){
     }
     if(t==5){
       ptr=t_five;
+    }
+    if(t==6){
+      ptr=t_six;
+    }
+    if(t==7){
+      ptr=t_seven;
     }
     for(i=0;i<4;i++){
       for(j=0;j<4;j++){
@@ -155,7 +173,7 @@ block::~block(){
 }
 void block::randSet(){
   srand((int)time(0));
-  int ran=rand()%6;
+  int ran=rand()%8;
   int tran=rand()%5;
   if(ran==0) ran++;
   if(tran==0) tran++;
