@@ -32,7 +32,6 @@ int main()
   COORD coordSize={150,80};
   SMALL_RECT rect={0,0,120,50};
   SetConsoleWindowInfo(hOut,TRUE,&rect);
-  lastTime=GetTickCount();
   CONSOLE_CURSOR_INFO cursor_info;
   cursor_info.bVisible = FALSE;
   cursor_info.dwSize   = 100;

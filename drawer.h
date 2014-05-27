@@ -8,7 +8,10 @@ class drawer{
     drawer();
     void setCur(int,int);
     void setCur(point &);
-    void drawDot(int ,int);
+    void draw(int ,int ,char *);
+    void erase_line(int ,int ,int ,int);
+    void erase_HorizontalLine(int ,int ,int);
+    void drawBlockUnit(int,int);
     void drawLine(int ,int ,int ,int );
     void drawRect(int ,int ,int ,int );
     void drawBlock(block&,int);
@@ -17,7 +20,6 @@ class drawer{
     void e_act(block&,int(*)[25]);
     void era_block(int x,int y);
     void era_Dot(int,int);
-    void era_line(int);
   private:
     HANDLE dHandle;
     DWORD colors[6];

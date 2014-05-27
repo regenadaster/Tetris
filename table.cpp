@@ -81,7 +81,7 @@ void table::deleteGood(){
     if(flag==1){
       score++;
       moveDown(i);
-      t_drawer.era_line(i);
+      t_drawer.erase_HorizontalLine(4,25,i);
       era_table();
       drawScore();
       drawBmap();
@@ -101,7 +101,7 @@ void table::drawBmap(){
   for(i=4;i<25;i++){
     for(j=1;j<20;j++){
       if(bmap[i][j]){
-        t_drawer.drawDot(i,j);
+        t_drawer.drawBlockUnit(i,j);
       }
     }
   }
@@ -138,7 +138,7 @@ void table::GameOver(){
   for(_i=1;_i<20;_i++){
     for(_j=2;_j<25;_j+=2){
       Sleep(5);
-      t_drawer.drawDot(_j,_i);
+      t_drawer.drawBlockUnit(_j,_i);
     }
   }
   t_drawer.drawTXT("Game Over!",10,10);

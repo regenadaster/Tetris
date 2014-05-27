@@ -13,18 +13,20 @@ drawer::drawer(){
   colors[4]=FOREGROUND_BLUE|FOREGROUND_RED;
   colors[5]=FOREGROUND_GREEN|FOREGROUND_RED;
 }
+void drawer::draw(int xx,int yy,char *cha){
+  setCur(xx,yy);
+  printf("%s",cha);
+}
 void drawer::drawLine(int sx,int sy,int ex,int ey){
   int i;
   if(sx==ex){
     for(i=sy+1;i<ey;i+=1){
-      setCur(sx,i);
-      printf("%s","©ª");
+      draw(sx,i,"©ª");
     }
   }
   if(sy==ey){
     for(i=sx+1;i<ex;i+=2){
-      setCur(i,sy);
-      printf("%s","©¨");
+      draw(i,sy,"©¨");
     }
   }
 }
@@ -34,14 +36,10 @@ void drawer::drawRect(int sx,int sy,int ex,int ey){
   drawLine(ex,sy,ex,ey);
   drawLine(sx,ey,ex,ey);
   if(sx<ex&&sy<ey){
-    setCur(sx,sy);
-    printf("%s","©°");
-    setCur(sx,ey);
-    printf("%s","©¸");
-    setCur(ex,sy);
-    printf("%s","©´");
-    setCur(ex,ey);
-    printf("%s","©¼");
+    draw(sx,sy,"©°");
+    draw(sx,ey,"©¸");
+    draw(ex,sy,"©´");
+    draw(ex,ey,"©¼");
   }
 }
 void drawer::setCur(int xx,int yy){
@@ -58,9 +56,8 @@ void drawer::drawBlock(block& bl,int cRand){
   by=bl.getPos().getY();
   for(_i=0;_i<4;_i++){
     for(_j=0;_j<4;_j++){
-      setCur(bx+_i*2,by+_j);
       if(bl.getData(_i,_j)==1){
-        printf("%s","¡ö");
+        draw(bx+_i*2,by+_j,"¡ö");
       }
     }
   }
@@ -72,31 +69,36 @@ void drawer::e_act(block& bl,int (*bm)[25]){
   sy=s.getY();
   for(_i=0;_i<4;_i++){
     for(_j=0;_j<4;_j++){
-      setCur(sx+_i*2,_j+sy);
       if(bl.getData(_i,_j)&&!bm[sx+_i*2][_j+sy]) {
-        printf("%s","  ");//maybe some bugs;
+        draw(sx+_i*2,_j+sy,"  ");//maybe some bugs;
       }
     }
   }
 }
-void drawer::era_line(int yy){
+void drawer::erase_line(int sx,int sy,int ex,int ey){
   int i;
-  for(i=4;i<25;i+=2){
-    setCur(i,yy);
-    printf("%s"," ");
+  if(sx==ex){
+    for(i=sy;i<ey;i++){
+      draw(sx,i," ");
+    }
+  }
+  if(sy==ey){
+    for(i=sx;i<ex;i++){
+      draw(sy,i," ");
+    }
   }
 }
-void drawer::drawDot(int xx,int yy){
-  setCur(xx,yy);
-  printf("%s","¡ö");
+void drawer::erase_HorizontalLine(int sx,int ex,int y){
+  erase_line(sx,y,ex,y);
+}
+void drawer::drawBlockUnit(int xx,int yy){
+  draw(xx,yy,"¡ö");
 }
 void drawer::era_Dot(int xx,int yy){
-  setCur(xx,yy);
-  printf("%s"," ");
+  draw(xx,yy," ");
 }
 void drawer::drawTXT(char *str,int x,int y){
-  setCur(x,y);
-  printf("%s",str);
+  draw(x,y,str);
 }
 void drawer::drawINT(int val,int x,int y){
   setCur(x,y);
@@ -108,8 +110,7 @@ void drawer::era_block(int x,int y){
   sy=y;
   for(_i=0;_i<4;_i++){
     for(_j=0;_j<4;_j++){
-      setCur(sx+_i*2,_j+sy);
-      printf("%s","¡¡");//maybe some bugs;
+      draw(sx+_i*2,_j+sy,"¡¡");//maybe some bugs;
     }
   }
 }
