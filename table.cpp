@@ -4,32 +4,40 @@
 #include <memory.h>
 #include <time.h>
 table::table():THeight(20),TWidth(150){
-  int i,j;
+  tableInit();
   colorChange();
-  b_h=0;
-  b_w=0;
-  score=0;
-  gameOver=0;
-  lastTime=GetTickCount();
-  isPaint=0;
   InitializeCriticalSection(&mycs);
-  t_drawer.drawRect(1,0,26,20);
-  t_drawer.drawRect(30,0,40,20);
+  drawGameFrame();
   drawAuthor();
   drawScore();
-  setHeight(THeight);
-  setWidth(TWidth);
-  memset(bmap,0,sizeof(bmap));
-  for(i=0;i<150;i++){
+  setGameVerge();
+}
+void table::drawGameFrame(){
+  t_drawer.drawRect(1,0,26,20);
+  t_drawer.drawRect(30,0,40,20);
+}
+void table::setGameVerge(){
+  int i;
+  for(i=0;i<getWidth();i++){
     bmap[i][20]=1;
     bmap[i][0]=1;
   }
-  for(i=0;i<20;i++){
+  for(i=0;i<getHeight();i++){
     bmap[0][i]=1;
     bmap[1][i]=1;
     bmap[2][i]=1;
     bmap[26][i]=1;
   }
+}
+void table::tableInit(){
+  isPaint=0;
+  b_h=0;
+  b_w=0;
+  score=0;
+  gameOver=0;
+  memset(bmap,0,sizeof(bmap));
+  setHeight(THeight);
+  setWidth(TWidth);
 }
 void table::colorChange(){
   srand((int)time(0));
@@ -112,6 +120,11 @@ void table::eraLineBmap(int y){
     bmap[i][y]=0;
   }
 }
+/**
+  the parameter of crash are x and y
+    x refer the block forward x
+    y fefer the block forward y
+**/
 bool table::crash(int x,int y){
   int xx,yy,_i,_j;
   yy=current.getPos().getY();

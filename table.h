@@ -6,7 +6,10 @@
 class table{
   public:
    table();
+   void tableInit();
    void setHeight(int );
+   void setGameVerge();
+   void drawGameFrame();
    int getHeight();
    void setWidth(int );
    int getWidth();

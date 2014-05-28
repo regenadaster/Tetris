@@ -4,6 +4,13 @@
 #include "time.h"
 
 block::block():startP(point(6,1)){
+  init();
+  setTypeArr();
+  allocData();
+  randSet();
+  setTypeAndState();
+}
+void block::setTypeArr(){
   int i,j,k;
   int tmpArr[7][4][4]={
     {
@@ -56,10 +63,6 @@ block::block():startP(point(6,1)){
       }
     }
   }
-  init();
-  allocData();
-  randSet();
-  setTypeAndState();
 }
 void block::allocData(){
   int k,i,j;

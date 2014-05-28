@@ -48,6 +48,7 @@ class block{
     point getPos()const;
     void init();
     void initTypeAndState();
+    void setTypeArr();
     block& operator=(const block &right);
   private:
     const point startP;
