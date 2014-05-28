@@ -199,17 +199,15 @@
 	<iostream>
 	"point.h"
 
-1401270874 source:e:\github\tetris\russiablock.cpp
+1401280648 source:e:\github\tetris\russiablock.cpp
 	<iostream>
 	<stdio.h>
-	<windows.h>
-	<winuser.h>
-	<conio.h>
 	"table.h"
 	"point.h"
 	"drawer.h"
 	"block.h"
 	"eraser.h"
+	"setting.h"
 
 1401277318 e:\github\tetris\table.h
 	"drawer.h"
@@ -244,4 +242,13 @@
 	"interaction.h"
 	<stdio.h>
 	<windows.h>
+
+1401280285 e:\github\tetris\setting.h
+	<windows.h>
+
+1401280528 source:e:\github\tetris\setting.cpp
+	<iostream>
+	"setting.h"
+	<conio.h>
+	<winuser.h>
 
