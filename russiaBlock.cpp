@@ -1,6 +1,6 @@
 #define _WIN32_WINNT 0x0500
-#include<iostream>
-#include<stdio.h>
+#include <iostream>
+#include <stdio.h>
 #include "table.h"
 #include "point.h"
 #include "drawer.h"

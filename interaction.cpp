@@ -1,7 +1,7 @@
 #include <iostream>
-#include "interaction.h"
 #include <stdio.h>
 #include <windows.h>
+#include "interaction.h"
 
 using namespace std;
 
