@@ -39,6 +39,7 @@ class block{
     void setState(int);
     int getState()const;
     int getNextState()const;
+    void initPos();
     void setBpos(int, int);
     void rotote();
     int getData(int x,int y);
@@ -58,6 +59,7 @@ class block{
       return Proxy(data[index]);
     }
   private:
+    const point startP;
     int typeArr[7][4][4];
     int b_type;
     int next_type;

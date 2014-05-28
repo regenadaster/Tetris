@@ -3,7 +3,7 @@
 #include "stdlib.h"
 #include "time.h"
 
-block::block(){
+block::block():startP(point(6,1)){
   int i,j,k;
   int tmpArr[7][4][4]={
     {
@@ -61,7 +61,7 @@ block::block(){
   allocData();
   randSet();
   setTypeAndState();
-  setBpos(6,1);
+  initPos();
 }
 void block::allocData(){
   int k,i,j;
@@ -105,7 +105,7 @@ block::block(const block&right){
 void block::reflesh(){
   b_type=0;
   b_state=0;
-  setBpos(6,1);
+  initPos();
   setTypeAndState();
   randSet();
 }
@@ -176,4 +176,8 @@ void block::setTypeAndState(){
 }
 int block::getData(int x,int y){
   return this->data[x][y];
+}
+void block::initPos(){
+  this->b_pos.setX(startP.getX());
+  this->b_pos.setY(startP.getY());
 }
