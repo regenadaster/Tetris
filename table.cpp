@@ -76,7 +76,7 @@ void table::addToBmap(){
     }
   }
 }
-void table::deleteGood(){
+void table::deleteLevel(){
   int i,j,flag,cn;
   cn=0;
   for(i=1;i<20;i++){
@@ -163,94 +163,69 @@ void table::run(){
   w=current.getPos().getX();
   setBh(h);
   setBw(w);
-  if(getBh()==1&&crash(0,1)==1){
-    GameOver();
-  }
-  if(getBh()==1){
-    nextb.setType(current.getNextType());
-    nextb.setState(current.getNextState());
-    nextb.setBpos(32,10);
-    t_drawer.drawBlock(nextb,colorRand);
+  if(isFirstStep()){
+    if(crash(0,1)==1){
+      GameOver();
+    }
+    drawNextBlockBySide();
   }
   lastTime=GetTickCount();
   while(GetTickCount()-lastTime<=500){
-    if(GetAsyncKeyState(VK_UP)){
+    if(assistant.isKeyUp()){
       if(isRotote()){
-      if(getIspaint()){
-        table_era(current);
-        setIspaint(0);
-      }
-      current.rotote();
-      t_drawer.drawBlock(current,colorRand);
-      setIspaint(1);
-      Sleep(100);
-      }
-    }
-    if(GetAsyncKeyState(VK_LEFT)){
-      if(crash(-2,0)==0) {
-        if(getIspaint()){
-          table_era(current);
-          setIspaint(0);
-        }
-        w=current.getPos().getX();
-        setBw(w-2);
-        current.setBpos(getBw(),getBh());
+        erase_block(current);
+        current.rotote();
         t_drawer.drawBlock(current,colorRand);
         setIspaint(1);
+        Sleep(100);
+      }
+    }
+    if(assistant.isKeyLeft()){
+      if(crash(-2,0)==0) {
+        moveStep(-2,0);
         Sleep(90);
       }
     }
-    if(GetAsyncKeyState(VK_RIGHT)){
+    if(assistant.isKeyRight()){
       if(crash(2,0)==0) {
-        if(getIspaint()){
-          table_era(current);
-          setIspaint(0);
-        }
-        w=current.getPos().getX();
-        setBw(w+2);
-        current.setBpos(getBw(),getBh());
-        t_drawer.drawBlock(current,colorRand);
-        setIspaint(1);
+        moveStep(2,0);
         Sleep(90);
      }
     }
-    if(GetAsyncKeyState(VK_DOWN)){
+    if(assistant.isKeyDown()){
       if(crash(0,1)==0) {
-        BhIncrement();
-        if(getIspaint()){
-          table_era(current);
-          setIspaint(0);
-        }
-        current.setBpos(getBw(),getBh());
-        t_drawer.drawBlock(current,colorRand);
-        setIspaint(1);
-        Sleep(20);
+        moveStep(0,1);
+        Sleep(15);
       }
     }
   }
-  if(getBh()!=1) if(crash(0,1)==0) {
-    if(getIspaint()){
-      table_era(current);
-      setIspaint(0);
-    }
-  }
+  autoMoveDown();
+}
+void table::autoMoveDown(){
   if(crash(0,1)==0){
-    BhIncrement();
-    if(getIspaint()){
-      table_era(current);
-      setIspaint(0);
-    }
-    current.setBpos(getBw(),getBh());
-    t_drawer.drawBlock(current,colorRand);
-    setIspaint(1);
+    moveStep(0,1);
   }
   else{
     colorChange();
     addToBmap();
-    deleteGood();
+    deleteLevel();
     current.reflesh();
     t_drawer.era_block(32,10);
   }
+}
+void table::erase_block(block &bl){
+  if(getIspaint()){
+    table_era(bl);
+    setIspaint(0);
+  }
+}
+void table::moveStep(int x,int y){
+  erase_block(current);
+  setBw(current.getPos().getX()+x);
+  setBh(current.getPos().getY()+y);
+  current.setBpos(getBw(),getBh());
+  t_drawer.drawBlock(current,colorRand);
+  setIspaint(1);
 }
 int table::isRotote(){
   int tmp_one[4][4];
@@ -278,6 +253,18 @@ int table::isRotote(){
     }
   }
   return 1;
+}
+void table::drawNextBlockBySide(){
+  nextb.setType(current.getNextType());
+  nextb.setState(current.getNextState());
+  nextb.setBpos(32,10);
+  t_drawer.drawBlock(nextb,colorRand);
+}
+int table::isFirstStep(){
+ if(getBh()==1){
+  return 1;
+ }
+ return 0;
 }
 int table::getGameOver(){
   return gameOver;

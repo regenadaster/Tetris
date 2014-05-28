@@ -3,39 +3,46 @@
 #include "drawer.h"
 #include "block.h"
 #include "point.h"
+#include "interaction.h"
 class table{
   public:
    table();
+   int isFirstStep();
+   void drawNextBlockBySide();
    void tableInit();
    void setHeight(int );
    void setGameVerge();
    void drawGameFrame();
    int getHeight();
+   void autoMoveDown();
    void setWidth(int );
    int getWidth();
    void addToBmap();
    void run();
-   bool crash(int x,int y);
-   void eraLineBmap(int y);
-   void deleteGood();
+   bool crash(int ,int );
+   void eraLineBmap(int );
+   void deleteLevel();
    void drawBmap();
-   void setBh(int hh);
+   void moveStep(int ,int );
+   void setBh(int );
    int getBh();
    void BhIncrement();
-   void setBw(int ww);
+   void setBw(int );
    int getBw();
    void era_table();
    void drawScore();
-   void moveDown(int y);
+   void moveDown(int );
    void GameOver();
    void drawAuthor();
    int getGameOver();
-   void setIspaint(int x);
+   void setIspaint(int );
    int getIspaint();
    int isRotote();
    void colorChange();
+   void erase_block(block&);
    void table_era(block&);
   private:
+    interaction assistant;
     int lastTime;
     int isPaint;
     CRITICAL_SECTION mycs;

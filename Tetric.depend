@@ -185,7 +185,7 @@
 	"drawer.h"
 	"time.h"
 
-1401265444 e:\github\tetris\drawer.h
+1401272262 e:\github\tetris\drawer.h
 	"windows.h"
 	"block.h"
 	"point.h"
@@ -211,17 +211,18 @@
 	"block.h"
 	"eraser.h"
 
-1401271672 e:\github\tetris\table.h
+1401277318 e:\github\tetris\table.h
 	"drawer.h"
 	"block.h"
 	"point.h"
+	"interaction.h"
 
 1401265444 e:\github\tetris\eraser.h
 	"point.h"
 	"drawer.h"
 	"block.h"
 
-1401270496 source:e:\github\tetris\table.cpp
+1401277296 source:e:\github\tetris\table.cpp
 	<iostream>
 	<stdio.h>
 	"table.h"
@@ -235,4 +236,12 @@
 	"time.h"
 
 1401270653 source:e:\github\tetris\color.cpp
+
+1401274524 e:\github\tetris\interaction.h
+
+1401275210 source:e:\github\tetris\interaction.cpp
+	<iostream>
+	"interaction.h"
+	<stdio.h>
+	<windows.h>
 
