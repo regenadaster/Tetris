@@ -178,3 +178,53 @@
 	"stdlib.h"
 	"time.h"
 
+1401265444 source:e:\github\tetris\drawer.cpp
+	<iostream>
+	<stdio.h>
+	"windows.h"
+	"drawer.h"
+	"time.h"
+
+1401265444 e:\github\tetris\drawer.h
+	"windows.h"
+	"block.h"
+	"point.h"
+
+1401265715 e:\github\tetris\block.h
+	"point.h"
+
+1401265444 e:\github\tetris\point.h
+
+1401265444 source:e:\github\tetris\point.cpp
+	<iostream>
+	"point.h"
+
+1401265444 source:e:\github\tetris\russiablock.cpp
+	<iostream>
+	<stdio.h>
+	<windows.h>
+	<winuser.h>
+	<conio.h>
+	"table.h"
+	"point.h"
+	"drawer.h"
+	"block.h"
+	"eraser.h"
+
+1401265444 e:\github\tetris\table.h
+	"drawer.h"
+	"block.h"
+	"point.h"
+
+1401265444 e:\github\tetris\eraser.h
+	"point.h"
+	"drawer.h"
+	"block.h"
+
+1401265444 source:e:\github\tetris\table.cpp
+	<iostream>
+	<stdio.h>
+	"table.h"
+	<memory.h>
+	<time.h>
+

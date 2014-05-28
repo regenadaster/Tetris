@@ -58,6 +58,7 @@ class block{
       return Proxy(data[index]);
     }
   private:
+    int typeArr[7][4][4];
     int b_type;
     int next_type;
     int next_state;
