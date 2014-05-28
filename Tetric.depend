@@ -190,12 +190,12 @@
 	"block.h"
 	"point.h"
 
-1401268081 e:\github\tetris\block.h
+1401270856 e:\github\tetris\block.h
 	"point.h"
 
 1401267847 e:\github\tetris\point.h
 
-1401265444 source:e:\github\tetris\point.cpp
+1401267859 source:e:\github\tetris\point.cpp
 	<iostream>
 	"point.h"
 
@@ -211,7 +211,7 @@
 	"block.h"
 	"eraser.h"
 
-1401265444 e:\github\tetris\table.h
+1401270469 e:\github\tetris\table.h
 	"drawer.h"
 	"block.h"
 	"point.h"
@@ -221,10 +221,16 @@
 	"drawer.h"
 	"block.h"
 
-1401265444 source:e:\github\tetris\table.cpp
+1401270496 source:e:\github\tetris\table.cpp
 	<iostream>
 	<stdio.h>
 	"table.h"
 	<memory.h>
 	<time.h>
+
+1401270540 source:e:\github\tetris\block.cpp
+	<stdio.h>
+	"block.h"
+	"stdlib.h"
+	"time.h"
 

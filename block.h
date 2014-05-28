@@ -49,21 +49,6 @@ class block{
     void init();
     void initTypeAndState();
     block& operator=(const block &right);
-    /***
-      remove the overloaded [][] operator
-      for that the order is reverse;
-    class Proxy{
-      public:
-        Proxy(int *arr);
-        int operator[](int index);
-      private:
-        int *_arr;
-    };
-    Proxy operator[](int index){
-      //printf("data[%d]:%d ",index,data[index]);
-      return Proxy(data[index]);
-    }
-    ***/
   private:
     const point startP;
     int typeArr[7][4][4];

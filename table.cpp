@@ -3,7 +3,7 @@
 #include "table.h"
 #include <memory.h>
 #include <time.h>
-table::table(){
+table::table():THeight(20),TWidth(150){
   int i,j;
   colorChange();
   b_h=0;

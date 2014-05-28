@@ -19,15 +19,6 @@ int main()
   hOut=GetStdHandle(STD_OUTPUT_HANDLE);
   SetConsoleCursorPosition(hOut,pos);
   SetConsoleTextAttribute(hOut, FOREGROUND_BLUE|FOREGROUND_INTENSITY|FOREGROUND_RED);
-  //printf("HelloWorld!\n");
-  //Sleep(3000);
-  //RECT r={0,0,10,10};
-  //COORD cur = {15, 5};
-  //SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), cur);
-  //printf("                     ");
-  //InvalidateRect(hwnd,&r,TRUE);
-  //UpdateWindow (hwnd);
-  //system("cls");
   table gameTable;
   COORD coordSize={150,80};
   SMALL_RECT rect={0,0,120,50};
@@ -38,9 +29,6 @@ int main()
   SetConsoleCursorInfo(hOut, &cursor_info);
   while(1){
     gameTable.run();
-  //printf("%d %d",fir.getPos().getX(),fir.getPos().getY());
-  //printf("%d  ",p.getX());
-  //printf("%d",gameTable.getWidth());
     if(gameTable.getGameOver()){
       break;
     }

@@ -105,11 +105,6 @@ void block::reflesh(){
   setTypeAndState();
   randSet();
 }
-block::Proxy::Proxy(int *arr):_arr(arr){
-}
-int block::Proxy::operator[](int index){
-  return _arr[index];
-}
 point block::getPos()const{
   return b_pos;
 }

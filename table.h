@@ -43,8 +43,8 @@ class table{
     block current;
     int score;
     int gameOver;
-    const int THeight=20;
-    const int TWidth=150;
+    const int THeight;
+    const int TWidth;
     int bmap[150][25];
     int t_height;
     int t_width;
