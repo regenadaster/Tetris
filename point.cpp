@@ -21,15 +21,15 @@ point::point(int xx,int yy){
   setX(xx);
   setY(yy);
 }
-void point::setX(int xx){
+void point::setX(const int xx){
   x=xx;
 }
-void point::setY(int yy){
+void point::setY(const int yy){
   y=yy;
 }
-int point::getX(){
+int point::getX()const{
   return x;
 }
-int point::getY(){
+int point::getY()const{
   return y;
 }

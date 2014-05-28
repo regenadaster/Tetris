@@ -46,6 +46,8 @@ class block{
     void allocData();
     void setCur(int,int);
     point getPos()const;
+    void init();
+    void initTypeAndState();
     block& operator=(const block &right);
     class Proxy{
       public:

@@ -56,12 +56,10 @@ block::block():startP(point(6,1)){
       }
     }
   }
-  b_type=0;
-  b_state=0;
+  init();
   allocData();
   randSet();
   setTypeAndState();
-  initPos();
 }
 void block::allocData(){
   int k,i,j;
@@ -103,9 +101,7 @@ block::block(const block&right){
   this->setState(right.getState());
 }
 void block::reflesh(){
-  b_type=0;
-  b_state=0;
-  initPos();
+  init();
   setTypeAndState();
   randSet();
 }
@@ -176,6 +172,14 @@ void block::setTypeAndState(){
 }
 int block::getData(int x,int y){
   return this->data[x][y];
+}
+void block::initTypeAndState(){
+  b_type=0;
+  b_state=0;
+}
+void block::init(){
+  initTypeAndState();
+  initPos();
 }
 void block::initPos(){
   this->b_pos.setX(startP.getX());

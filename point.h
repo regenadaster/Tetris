@@ -5,10 +5,10 @@ class point{
     point();
     point(const point &);
     point(int ,int );
-    void setX(int);
-    void setY(int);
-    int getX();
-    int getY();
+    void setX(const int);
+    void setY(const int);
+    int getX()const;
+    int getY()const;
     point &operator=(const point &right);
   private:
     int x;
