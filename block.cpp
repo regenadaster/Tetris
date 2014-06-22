@@ -9,6 +9,7 @@ block::block():startP(point(6,1)){
   allocData();
   randSet();
   setTypeAndState();
+  randSet();
 }
 void block::setTypeArr(){
   int i,j,k;

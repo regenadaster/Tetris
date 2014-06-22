@@ -34,11 +34,17 @@
 		</Compiler>
 		<Unit filename="block.cpp" />
 		<Unit filename="block.h" />
+		<Unit filename="color.cpp" />
+		<Unit filename="color.h" />
 		<Unit filename="drawer.cpp" />
 		<Unit filename="drawer.h" />
+		<Unit filename="interaction.cpp" />
+		<Unit filename="interaction.h" />
 		<Unit filename="point.cpp" />
 		<Unit filename="point.h" />
 		<Unit filename="russiaBlock.cpp" />
+		<Unit filename="setting.cpp" />
+		<Unit filename="setting.h" />
 		<Unit filename="table.cpp" />
 		<Unit filename="table.h" />
 		<Extensions>

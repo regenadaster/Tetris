@@ -4,6 +4,7 @@
 #include <memory.h>
 #include <time.h>
 table::table():THeight(20),TWidth(150){
+  nextb.setBpos(32,10);
   tableInit();
   colorChange();
   InitializeCriticalSection(&mycs);
@@ -254,10 +255,18 @@ int table::isRotote(){
   }
   return 1;
 }
+/**
+    this function is to draw the next block
+  by the side;
+**/
 void table::drawNextBlockBySide(){
-  nextb.setType(current.getNextType());
-  nextb.setState(current.getNextState());
-  nextb.setBpos(32,10);
+  if(current.getNextType()==current.getType()){
+    current.randSet();
+  }
+  int typeN=current.getNextType();
+  int stateN=current.getNextState();
+  nextb.setType(typeN);
+  nextb.setState(stateN);
   t_drawer.drawBlock(nextb,colorRand);
 }
 int table::isFirstStep(){
@@ -273,7 +282,7 @@ void table::moveDown(int y){
   int i,j;
   for(i=4;i<25;i++){
     for(j=y;j>1;j--){
-       bmap[i][j]=bmap[i][j-1];
+      bmap[i][j]=bmap[i][j-1];
     }
   }
 }

@@ -12,13 +12,13 @@ class drawer{
     void erase_line(int ,int ,int ,int);
     void erase_HorizontalLine(int ,int ,int);
     void drawBlockUnit(int,int);
-    void drawLine(int ,int ,int ,int );
-    void drawRect(int ,int ,int ,int );
+    void drawLine(int ,int ,int ,int);
+    void drawRect(int ,int ,int ,int);
     void drawBlock(block&,int);
-    void drawTXT(char *str,int x,int y);
-    void drawINT(int val,int x,int y);
+    void drawTXT(char *,int ,int );
+    void drawINT(int ,int ,int );
     void e_act(block&,int(*)[25]);
-    void era_block(int x,int y);
+    void era_block(int ,int);
     void era_Dot(int,int);
   private:
     HANDLE dHandle;

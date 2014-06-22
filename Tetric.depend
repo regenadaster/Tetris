@@ -178,14 +178,14 @@
 	"stdlib.h"
 	"time.h"
 
-1401265444 source:e:\github\tetris\drawer.cpp
+1401286428 source:e:\github\tetris\drawer.cpp
 	<iostream>
 	<stdio.h>
 	"windows.h"
 	"drawer.h"
 	"time.h"
 
-1401272262 e:\github\tetris\drawer.h
+1401285203 e:\github\tetris\drawer.h
 	"windows.h"
 	"block.h"
 	"point.h"
@@ -199,7 +199,7 @@
 	<iostream>
 	"point.h"
 
-1401280648 source:e:\github\tetris\russiablock.cpp
+1401280956 source:e:\github\tetris\russiablock.cpp
 	<iostream>
 	<stdio.h>
 	"table.h"
@@ -220,14 +220,14 @@
 	"drawer.h"
 	"block.h"
 
-1401277296 source:e:\github\tetris\table.cpp
+1401327458 source:e:\github\tetris\table.cpp
 	<iostream>
 	<stdio.h>
 	"table.h"
 	<memory.h>
 	<time.h>
 
-1401271212 source:e:\github\tetris\block.cpp
+1401326537 source:e:\github\tetris\block.cpp
 	<stdio.h>
 	"block.h"
 	"stdlib.h"
@@ -237,11 +237,11 @@
 
 1401274524 e:\github\tetris\interaction.h
 
-1401275210 source:e:\github\tetris\interaction.cpp
+1401280968 source:e:\github\tetris\interaction.cpp
 	<iostream>
-	"interaction.h"
 	<stdio.h>
 	<windows.h>
+	"interaction.h"
 
 1401280285 e:\github\tetris\setting.h
 	<windows.h>
